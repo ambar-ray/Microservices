@@ -12,6 +12,7 @@ namespace Microservices.Messaging.Kafka.classes
         public async Task HandleAsync(TKey key, TValue value)
         {
             //Do whatever you want with the message key and value
+            Console.WriteLine($"Got message with Key : {key} and Value : {value}");
             await Task.CompletedTask;
         }
     }

@@ -70,6 +70,8 @@ namespace ConsumerAPI
                 });
             }
 
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

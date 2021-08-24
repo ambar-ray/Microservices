@@ -61,6 +61,8 @@ namespace ProducerAPI
                 });
             }
 
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
