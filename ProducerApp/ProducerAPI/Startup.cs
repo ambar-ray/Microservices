@@ -33,7 +33,8 @@ namespace ProducerAPI
             var producerConfig = new ProducerConfig(new ClientConfig
             {
                 BootstrapServers = Configuration["Kafka:ClientConfigs:BootstrapServers"],
-                ClientId = Dns.GetHostName()
+                ClientId = Dns.GetHostName(),
+                Acks = Acks.Leader
             });
             services.AddSingleton(producerConfig);
             services.AddSingleton(typeof(IKafkaProducer<,>), typeof(KafkaProducer<,>));
