@@ -34,7 +34,8 @@ namespace ProducerAPI
             {
                 BootstrapServers = Configuration["Kafka:ClientConfigs:BootstrapServers"],
                 ClientId = Dns.GetHostName(),
-                Acks = Acks.Leader
+                Acks = Acks.Leader,
+                MaxInFlight = 1 //ordered delivery
             });
             services.AddSingleton(producerConfig);
             services.AddSingleton(typeof(IKafkaProducer<,>), typeof(KafkaProducer<,>));
